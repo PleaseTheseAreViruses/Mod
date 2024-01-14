@@ -1,6 +1,6 @@
 package net.billy.bookmod.item.custom;
 
-import net.minecraft.entity.ItemEntity;
+
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
@@ -11,42 +11,32 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
 
-
-import java.util.concurrent.atomic.AtomicBoolean;
-
 import static net.minecraft.util.Hand.MAIN_HAND;
 
-public class BookWar extends Item {
-
-    public BookWar(Settings settings) {super(settings);
+public class Book_Immortality extends Item{
+    public Book_Immortality(Item.Settings settings) {super(settings);
     }
 
 
-
-
-        @Override
+    @Override
     public boolean canBeNested()
     {
         return false;
     }
-
-
-
-
-
-    @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
 
 
         if (!world.isClient() && hand == MAIN_HAND) {
-            new Potion(new StatusEffectInstance(StatusEffects.STRENGTH, 1000, 3));
-            user.addStatusEffect(new StatusEffectInstance(StatusEffects.STRENGTH, 1000, 3));
+            new Potion(new StatusEffectInstance(StatusEffects.HEALTH_BOOST, 6000, 4));
+            user.addStatusEffect(new StatusEffectInstance(StatusEffects.HEALTH_BOOST, 6000, 4));
 
 
 
-            user.getItemCooldownManager().set(this, 1200);
+            user.getItemCooldownManager().set(this, 3000);
         }
         return super.use(world, user, hand);
 
     }
 }
+
+
