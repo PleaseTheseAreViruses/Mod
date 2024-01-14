@@ -16,7 +16,7 @@
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-          "net.billy.bookmod.BookMod"
+          "net.billy.bookmod.TemplateMod"
 		],
 		"client": [
 			"net.billy.bookmod.BookModClient"
