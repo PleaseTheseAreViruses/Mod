@@ -1,6 +1,5 @@
 package net.billy.bookmod.item.custom;
 
-
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
@@ -13,9 +12,11 @@ import net.minecraft.world.World;
 
 import static net.minecraft.util.Hand.MAIN_HAND;
 
-public class Book_Immortality extends Item{
-    public Book_Immortality(Item.Settings settings) {super(settings);
+public class Book_Freedom extends Item {
+    public Book_Freedom(Item.Settings settings) {super(settings);
     }
+
+
 
 
     @Override
@@ -23,20 +24,16 @@ public class Book_Immortality extends Item{
     {
         return false;
     }
-    public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
-
-
-        if (!world.isClient() && hand == MAIN_HAND) {
-            new Potion(new StatusEffectInstance(StatusEffects.HEALTH_BOOST, 6000, 9));
-            user.addStatusEffect(new StatusEffectInstance(StatusEffects.HEALTH_BOOST, 6000, 9));
+    public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) { if (!world.isClient() && hand == MAIN_HAND) {
+        new Potion(new StatusEffectInstance(StatusEffects.SPEED, 600, 3));
+        user.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, 600, 3));
 
 
 
-            user.getItemCooldownManager().set(this, 3000);
-        }
+        user.getItemCooldownManager().set(this, 1200);
+    }
         return super.use(world, user, hand);
 
     }
 }
-
 

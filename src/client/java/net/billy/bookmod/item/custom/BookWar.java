@@ -39,8 +39,8 @@ public class BookWar extends Item {
 
 
         if (!world.isClient() && hand == MAIN_HAND) {
-            new Potion(new StatusEffectInstance(StatusEffects.STRENGTH, 1000, 3));
-            user.addStatusEffect(new StatusEffectInstance(StatusEffects.STRENGTH, 1000, 3));
+            new Potion(new StatusEffectInstance(StatusEffects.STRENGTH, 600, 5));
+            user.addStatusEffect(new StatusEffectInstance(StatusEffects.STRENGTH, 600, 5));
 
 
 

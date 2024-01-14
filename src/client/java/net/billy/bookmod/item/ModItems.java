@@ -2,6 +2,7 @@ package net.billy.bookmod.item;
 
 import net.billy.bookmod.BookMod;
 import net.billy.bookmod.item.custom.BookWar;
+import net.billy.bookmod.item.custom.Book_Freedom;
 import net.billy.bookmod.item.custom.Book_Immortality;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.item.Item;
@@ -18,6 +19,8 @@ public class ModItems {
 
     public static final Item Book_Immortality = registerItem("book_immortality",
             new Book_Immortality(new FabricItemSettings().group(ItemGroup.MISC)));
+    public static final Item Book_Freedom = registerItem("book_freedom",
+            new Book_Freedom(new FabricItemSettings().group(ItemGroup.MISC)));
 
     private static Item registerItem(String name, Item item) {
         Registry.register(Registry.ITEM, new Identifier(BookMod.MOD_ID, name), item);
